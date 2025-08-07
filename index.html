@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTx Esports - India's Premier BGMI Scrims Organizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Russo One', sans-serif;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes neon-glow {
+            0% { box-shadow: 0 0 5px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea; }
+            100% { box-shadow: 0 0 10px #ff00ff, 0 0 30px #ff00ff, 0 0 50px #ff00ff; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .gradient-bg {
+            background: linear-gradient(45deg, #0d1b2a, #7209b7, #f72585, #0d1b2a);
+            background-size: 400%;
+            animation: gradient 10s ease infinite;
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1057&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .glass-effect:hover {
+            animation: neon-glow 1.5s infinite alternate;
+            transform: translateY(-5px);
+        }
+        .particle-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .neon-text {
+            text-shadow: 0 0 10px #00ffea, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            animation: pulse 2s infinite;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 2px solid #00ffea;
+            z-index: 1000;
+            animation: popupFadeIn 0.5s ease-in-out;
+        }
+        @keyframes popupFadeIn {
+            0% { opacity: 0; transform: translate(-50%, -60%); }
+            100% { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #ff00ff;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Hero Section -->
+    <section class="min-h-screen gradient-bg flex flex-col items-center justify-center relative overflow-hidden">
+        <canvas class="particle-bg"></canvas>
+        <img src="https://plus.unsplash.com/premium_photo-1669077047112-27a604f93f31?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="FASTx Esports Logo" class="w-64 mb-6 animate-pulse ring-4 ring-cyan-500 rounded-lg">
+        <h1 class="text-5xl md:text-7xl font-bold text-center mb-4 neon-text">FASTx Esports</h1>
+        <p class="text-xl md:text-2xl text-center mb-8" style="font-family: 'Bebas Neue', sans-serif;">India’s Premier BGMI Scrims Organizer – Dominate the Battleground!</p>
+        <a href="#join" class="glass-effect px-8 py-4 text-lg font-semibold rounded-full hover:ring-4 hover:ring-cyan-500 transition-all duration-300">Join FASTx Esports Custom Room</a>
+    </section>
+
+    <!-- Live Streams Slider -->
+    <section class="py-16 px-4 md:px-16 bg-gray-900">
+        <h2 class="text-4xl font-bold text-center mb-12 neon-text" data-aos="zoom-in">FASTx Esports Live Streams</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="glass-effect p-4 rounded-lg" data-aos="flip-left">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1057&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stream 1" class="w-full h-64 object-cover rounded-lg">
+                        <h3 class="text-xl font-semibold mt-4">FASTx Esports: Epic BGMI Showdown</h3>
+                        <p class="text-gray-400">3.5K Viewers</p>
+                        <a href="#" class="mt-4 inline-block px-6 py-2 bg-cyan-600 rounded-full hover:bg-cyan-700 transition-colors">Watch Live</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="glass-effect p-4 rounded-lg" data-aos="flip-left">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1057&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stream 2" class="w-full h-64 object-cover rounded-lg">
+                        <h3 class="text-xl font-semibold mt-4">FASTx Esports: Pro Scrims Live</h3>
+                        <p class="text-gray-400">2.8K Viewers</p>
+                        <a href="#" class="mt-4 inline-block px-6 py-2 bg-cyan-600 rounded-full hover:bg-cyan-700 transition-colors">Watch Live</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="glass-effect p-4 rounded-lg" data-aos="flip-left">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1057&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stream 3" class="w-full h-64 object-cover rounded-lg">
+                        <h3 class="text-xl font-semibold mt-4">FASTx Esports: Squad Battles</h3>
+                        <p class="text-gray-400">4.1K Viewers</p>
+                        <a href="#" class="mt-4 inline-block px-6 py-2 bg-cyan-600 rounded-full hover:bg-cyan-700 transition-colors">Watch Live</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="glass-effect p-4 rounded-lg" data-aos="flip-left">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1057&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stream 4" class="w-full h-64 object-cover rounded-lg">
+                        <h3 class="text-xl font-semibold mt-4">FASTx Esports: Clutch Moments Live</h3>
+                        <p class="text-gray-400">2.9K Viewers</p>
+                        <a href="#" class="mt-4 inline-block px-6 py-2 bg-cyan-600 rounded-full hover:bg-cyan-700 transition-colors">Watch Live</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="py-16 px-4 md:px-16 bg-black">
+        <h2 class="text-4xl font-bold text-center mb-12 neon-text" data-aos="zoom-in">FASTx Esports Highlights</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-effect p-6 rounded-lg" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Top Fraggers" class="w-full h-48 object-cover rounded-lg">
+                <h3 class="text-2xl font-semibold mt-4">FASTx Esports: Top Fraggers</h3>
+                <p class="text-gray-400">Celebrating the elite performers in our scrims!</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Clutch Moments" class="w-full h-48 object-cover rounded-lg">
+                <h3 class="text-2xl font-semibold mt-4">FASTx Esports: Clutch Moments</h3>
+                <p class="text-gray-400">Relive the most thrilling game finishes!</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team MVP" class="w-full h-48 object-cover rounded-lg">
+                <h3 class="text-2xl font-semibold mt-4">FASTx Esports: Team MVP</h3>
+                <p class="text-gray-400">Honoring the standout players!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Scrims Carousel -->
+    <section class="py-16 px-4 md:px-16 bg-gray-900">
+        <h2 class="text-4xl font-bold text-center mb-12 neon-text" data-aos="zoom-in">FASTx Esports Upcoming Scrims</h2>
+        <div class="swiper scrimsSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="glass-effect p-6 rounded-lg" data-aos="flip-right">
+                        <h3 class="text-xl font-semibold">FASTx Esports: Erangel Solo Scrim</h3>
+                        <p class="text-gray-400">Date: Aug 10, 2025 | Time: 8:00 PM IST</p>
+                        <p class="text-gray-400">Entry: Solo</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="glass-effect p-6 rounded-lg" data-aos="flip-right">
+                        <h3 class="text-xl font-semibold">FASTx Esports: Miramar Squad Scrim</h3>
+                        <p class="text-gray-400">Date: Aug 12, 2025 | Time: 9:00 PM IST</p>
+                        <p class="text-gray-400">Entry: Squad</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="glass-effect p-6 rounded-lg" data-aos="flip-right">
+                        <h3 class="text-xl font-semibold">FASTx Esports: Vikendi Duo Scrim</h3>
+                        <p class="text-gray-400">Date: Aug 15, 2025 | Time: 7:00 PM IST</p>
+                        <p class="text-gray-400">Entry: Duo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 px-4 md:px-16 bg-black">
+        <h2 class="text-4xl font-bold text-center mb-12 neon-text" data-aos="zoom-in">How FASTx Esports Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="glass-effect p-6 rounded-lg text-center" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-plus-circle text-4xl text-cyan-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Create Room</h3>
+                <p class="text-gray-400">Set up your FASTx Esports custom BGMI room effortlessly.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg text-center" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-gamepad text-4xl text-purple-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Join & Play</h3>
+                <p class="text-gray-400">Enter FASTx Esports rooms and compete with top players.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg text-center" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-trophy text-4xl text-pink-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Get Ranked</h3>
+                <p class="text-gray-400">Climb the FASTx Esports leaderboards with every win.</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg text-center" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-star text-4xl text-cyan-500 mb-4"></i>
+                <h3 class="text-xl font-semibold">Earn Spotlight</h3>
+                <p class="text-gray-400">Get featured as a top FASTx Esports player or team.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social + Community Section -->
+    <section class="py-16 px-4 md:px-16 bg-gray-900">
+        <h2 class="text-4xl font-bold text-center mb-12 neon-text" data-aos="zoom-in">Join FASTx Esports Community</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-8">
+            <a href="#" class="glass-effect px-8 py-4 flex items-center justify-center rounded-full hover:ring-4 hover:ring-cyan-500 transition-all duration-300 animate-pulse">
+                <i class="fab fa-whatsapp text-2xl mr-2"></i> Join FASTx Esports WhatsApp
+            </a>
+            <a href="#" class="glass-effect px-8 py-4 flex items-center justify-center rounded-full hover:ring-4 hover:ring-purple-500 transition-all duration-300 animate-pulse">
+                <i class="fab fa-instagram text-2xl mr-2"></i> Follow FASTx Esports on Instagram
+            </a>
+            <a href="#" class="glass-effect px-8 py-4 flex items-center justify-center rounded-full hover:ring-4 hover:ring-pink-500 transition-all duration-300 animate-pulse">
+                <i class="fab fa-youtube text-2xl mr-2"></i> View FASTx Esports YouTube
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Popup -->
+    <div class="popup" id="whatsappPopup">
+        <span class="popup-close" onclick="closePopup()">×</span>
+        <h2 class="text-2xl font-bold mb-4 neon-text">Join FASTx Esports WhatsApp Community!</h2>
+        <p class="text-gray-400 mb-4">Stay updated with the latest scrims, events, and exclusive updates!</p>
+        <a href="https://chat.whatsapp.com/your-link-here" class="glass-effect px-6 py-3 rounded-full hover:ring-4 hover:ring-cyan-500 transition-all duration-300">Join Now</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 md:px-16 bg-black glass-effect">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4 neon-text">FASTx Esports Contact</h3>
+                <p class="text-gray-400">Email: contact@fastxesports.com</p>
+                <p class="text-gray-400">Phone: +91 123 456 7890</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 neon-text">Follow FASTx Esports</h3>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-cyan-500"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-500"><i class="fab fa-youtube text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-500"><i class="fab fa-whatsapp text-2xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 neon-text">Links</h3>
+                <a href="#" class="block text-gray-400 hover:text-cyan-500">Privacy Policy</a>
+                <a href="#" class="block text-gray-400 hover:text-cyan-500">Terms of Service</a>
+                <a href="#" class="block text-gray-400 hover:text-cyan-500">FAQ</a>
+            </div>
+        </div>
+        <p class="text-center text-gray-400 mt-8">&copy; 2025 FASTx Esports. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="fixed bottom-8 right-8 glass-effect p-3 rounded-full hover:ring-4 hover:ring-cyan-500 transition-all duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 1000 });
+
+        // Particle Background
+        const canvas = document.querySelector('.particle-bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const particlesArray = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.05;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 255, 234, 0.8)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        function initParticles() {
+            for (let i = 0; i < 150; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                    particlesArray.push(new Particle());
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        initParticles();
+        animateParticles();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Initialize Swiper for Live Streams
+        new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
+
+        // Initialize Swiper for Scrims
+        new Swiper('.scrimsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('hidden', window.scrollY <= 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // WhatsApp Popup
+        const popup = document.getElementById('whatsappPopup');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                popup.style.display = 'block';
+            }, 2000);
+        });
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
